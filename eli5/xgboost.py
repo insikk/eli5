@@ -222,7 +222,7 @@ def _check_booster_args(xgb, is_regression=None):
     if isinstance(xgb, Booster):
         booster = xgb
     else:
-        booster = xgb.booster()
+        booster = xgb.get_booster()
         _is_regression = isinstance(xgb, XGBRegressor)
         if is_regression is not None and is_regression != _is_regression:
             raise ValueError(
